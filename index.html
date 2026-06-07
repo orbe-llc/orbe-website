@@ -126,6 +126,18 @@
     td{padding-top:4px;}
   }
 
+  /* news carousel */
+  .carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 2px 16px;margin-top:40px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .carousel::-webkit-scrollbar{display:none;}
+  .news-card{scroll-snap-align:start;flex:0 0 300px;min-height:200px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:16px;transition:transform .3s,box-shadow .3s,border-color .3s;}
+  .news-card:hover{transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(217,111,76,.45);border-color:#f3d3c4;}
+  .news-card .nico{width:40px;height:40px;display:block;}
+  .news-card .ttl{font-family:var(--mincho);font-size:19px;color:var(--ink);margin:0;}
+  .news-card .soon{margin-top:auto;font-family:var(--serif);letter-spacing:.18em;font-size:11.5px;text-transform:uppercase;color:var(--shinonome-deep);}
+  .carousel-nav{display:flex;gap:12px;margin-top:6px;}
+  .carousel-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .2s;}
+  .carousel-nav button:hover{background:var(--tint);border-color:var(--shinonome);transform:translateY(-2px);}
+
   /* footer */
   footer{background:var(--ink);color:#e9ddd5;padding:72px 0 40px;}
   .foot-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
@@ -151,8 +163,9 @@
       orbe
     </a>
     <div class="nav-links">
-      <a href="#about">About</a>
+      <a href="#about">Message</a>
       <a href="#services">Services</a>
+      <a href="#news">News</a>
       <a href="#company">Company</a>
     </div>
   </div>
@@ -165,13 +178,13 @@
       <ellipse cx="300" cy="300" rx="190" ry="190" stroke-width="1.2" stroke-opacity=".3"/>
       <ellipse cx="300" cy="300" rx="130" ry="240" stroke-width="1.2" stroke-opacity=".25" transform="rotate(18 300 300)"/>
     </g>
-    <circle cx="520" cy="228" r="9" fill="#f19072"/>
-    <circle cx="300" cy="110" r="5" fill="#d96f4c"/>
+    <circle cx="338" cy="378" r="11" fill="#f19072"/>
+    <circle cx="436" cy="300" r="5" fill="#d96f4c"/>
   </svg>
   <div class="wrap">
     <p class="eyebrow" data-rise>orbe LLC — Engineering the orbit</p>
-    <h1 data-rise><span class="accent">軌道</span>は、<br>進みながら描く。</h1>
-    <p class="lead" data-rise>ソフトウェア開発と生成AIで、プロダクトと事業の次の一歩をかたちにする。orbe合同会社は、受託開発と生成AI活用を軸にしたソフトウェア企業です。</p>
+    <h1 data-rise><span class="accent">n=1</span>から、<br>事業をつくる。</h1>
+    <p class="lead" data-rise>一人の具体的な課題と観察を起点に、ソフトウェアと生成AIで事業の軌道を描く。orbe合同会社は、受託開発と生成AI活用を軸にしたソフトウェア企業です。</p>
     <a class="cta" href="#company" data-rise>会社情報を見る
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
@@ -190,8 +203,8 @@
     <div class="wrap">
       <p class="label" data-rise>Message</p>
       <h2 class="sec-title" data-rise>最初から、正解はない。</h2>
-      <p data-rise>最初から正解の形をしている事業も、プロダクトもありません。小さくつくって、世に出して、反応を計測して、また直す。その反復のなかでしか、進むべき軌道は見えてこない。私はそう考えています。</p>
-      <p data-rise>orbe は、その反復に技術で伴走する会社です。受託開発を軸に、生成AIの実装から事業づくりの相談まで、つくるべきものの輪郭が曖昧な段階から関わります。立派な設計図を先に描くより、確かめながら一歩を出すことを大事にしています。</p>
+      <p data-rise>orbe は、受託開発と生成AI活用を軸にしたソフトウェア企業です。最初から正解の形をしている事業も、プロダクトもありません。一人の具体的な課題から出発し、小さくつくって、世に出して、反応を計測して、また直す。その反復のなかでしか、進むべき軌道は見えてこないと考えています。</p>
+      <p data-rise>つくるべきものの輪郭が曖昧な段階から関わるのが私たちの流儀です。立派な設計図を先に描くより、確かめながら一歩を出す。n=1 の観察を起点に、それを事業の規模まで引き上げていきます。</p>
       <p data-rise>派手な肩書きや大きな言葉より、目の前のひとつを動くところまで持っていく。その実直さで、関わる人の次の一歩をつくっていきます。</p>
       <p class="sign" data-rise><span class="role">Message from the CEO</span><span class="nm">orbe合同会社　代表　大原 真生</span></p>
     </div>
@@ -232,6 +245,34 @@
           <h3>コンサルティング</h3>
           <p>企業の経営、事業開発、情報システムに関するコンサルティング。技術と事業の両面から意思決定を支えます。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <p class="label" data-rise>News</p>
+      <h2 class="sec-title" data-rise>お知らせ</h2>
+      <div class="carousel" data-rise>
+        <div class="news-card">
+          <svg class="nico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="9" stroke="#f19072" stroke-width="2"/><circle cx="30" cy="28" r="4" fill="#f0b429"/></svg>
+          <p class="ttl">Coming soon...</p>
+          <span class="soon">準備中</span>
+        </div>
+        <div class="news-card">
+          <svg class="nico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 6 L34 32 L6 32 Z" stroke="#2b3a67" stroke-width="2" stroke-linejoin="round"/></svg>
+          <p class="ttl">Coming soon...</p>
+          <span class="soon">準備中</span>
+        </div>
+        <div class="news-card">
+          <svg class="nico" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="2" stroke="#2b3a67" stroke-width="2"/><circle cx="29" cy="29" r="6" fill="#f19072"/></svg>
+          <p class="ttl">Coming soon...</p>
+          <span class="soon">準備中</span>
+        </div>
+      </div>
+      <div class="carousel-nav" data-rise>
+        <button class="nav-prev" type="button" aria-label="前のお知らせ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button>
+        <button class="nav-next" type="button" aria-label="次のお知らせ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
       </div>
     </div>
   </section>
@@ -288,6 +329,13 @@
     el.style.transitionDelay=(Math.min(i,6)*60)+'ms';
     io.observe(el);
   });
+
+  const car=document.querySelector('.carousel');
+  if(car){
+    const prev=document.querySelector('.nav-prev'),next=document.querySelector('.nav-next');
+    prev&&prev.addEventListener('click',()=>car.scrollBy({left:-320,behavior:'smooth'}));
+    next&&next.addEventListener('click',()=>car.scrollBy({left:320,behavior:'smooth'}));
+  }
 </script>
 </body>
 </html>
