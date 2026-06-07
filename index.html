@@ -84,7 +84,9 @@
   .cta:hover svg{transform:translateX(4px);}
 
   /* ── sections ── */
-  section{padding:108px 0;}
+  section{padding:108px 0;position:relative;overflow:hidden;}
+  section>.wrap{position:relative;z-index:1;}
+  .deco{position:absolute;z-index:0;pointer-events:none;}
   .label{font-family:var(--serif);text-transform:uppercase;letter-spacing:.3em;font-size:12px;color:var(--shinonome-deep);margin:0 0 18px;}
   .sec-title{font-family:var(--mincho);font-weight:600;font-size:clamp(24px,3.6vw,34px);line-height:1.5;margin:0 0 18px;letter-spacing:.02em;}
 
@@ -92,6 +94,9 @@
   .about{background:linear-gradient(180deg,var(--tint) 0%, #fff 100%);}
   .about p{font-size:clamp(15px,2vw,17px);color:#473b33;max-width:62ch;margin:0 0 18px;}
   .about .strong{color:var(--shinonome-deep);font-weight:500;}
+  .sign{margin-top:36px;}
+  .sign .role{display:block;font-family:var(--serif);letter-spacing:.18em;font-size:11.5px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;}
+  .sign .nm{font-family:var(--mincho);font-size:19px;color:var(--ink);letter-spacing:.05em;}
 
   /* services */
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;}
@@ -165,8 +170,8 @@
   </svg>
   <div class="wrap">
     <p class="eyebrow" data-rise>orbe LLC — Engineering the orbit</p>
-    <h1 data-rise>ソフトウェア開発と生成AIで、<br><span class="accent">プロダクトと事業の軌道</span>をつくる。</h1>
-    <p class="lead" data-rise>orbe合同会社は、受託開発を軸に、生成AIを活用したシステム構築と事業づくりのコンサルティングを行うソフトウェア企業です。</p>
+    <h1 data-rise><span class="accent">軌道</span>は、<br>進みながら描く。</h1>
+    <p class="lead" data-rise>ソフトウェア開発と生成AIで、プロダクトと事業の次の一歩をかたちにする。orbe合同会社は、受託開発と生成AI活用を軸にしたソフトウェア企業です。</p>
     <a class="cta" href="#company" data-rise>会社情報を見る
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
@@ -175,11 +180,20 @@
 
 <main>
   <section class="about" id="about">
+    <svg class="deco" style="top:-40px;right:-30px;width:340px;opacity:.5" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+      <circle cx="210" cy="92" r="60" stroke="#f19072" stroke-width="2"/>
+      <path d="M62 40 L122 150 L2 150 Z" stroke="#2b3a67" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="20" y1="225" x2="285" y2="55" stroke="#f0b429" stroke-width="2"/>
+      <circle cx="150" cy="205" r="8" fill="#f19072"/>
+      <circle cx="252" cy="182" r="5" fill="#2b3a67"/>
+    </svg>
     <div class="wrap">
-      <p class="label" data-rise>About</p>
-      <h2 class="sec-title" data-rise>名は、軌道。</h2>
-      <p data-rise><span class="strong">orbe</span> は「軌道（orbit）」に由来します。プロダクトも事業も、立ち上げた瞬間に正解の形をしているわけではありません。小さく試し、計測し、仮説を更新しながら、進むべき軌道を少しずつ描いていく。その反復に技術で寄り添うのが私たちの役割です。</p>
-      <p data-rise>受託開発に閉じず、生成AIの実装から運用設計、事業づくりのコンサルティングまでを一気通貫で扱います。作るべきものの輪郭が曖昧な段階から関わり、検証を重ねて、確かなアウトプットへ収束させます。</p>
+      <p class="label" data-rise>Message</p>
+      <h2 class="sec-title" data-rise>最初から、正解はない。</h2>
+      <p data-rise>最初から正解の形をしている事業も、プロダクトもありません。小さくつくって、世に出して、反応を計測して、また直す。その反復のなかでしか、進むべき軌道は見えてこない。私はそう考えています。</p>
+      <p data-rise>orbe は、その反復に技術で伴走する会社です。受託開発を軸に、生成AIの実装から事業づくりの相談まで、つくるべきものの輪郭が曖昧な段階から関わります。立派な設計図を先に描くより、確かめながら一歩を出すことを大事にしています。</p>
+      <p data-rise>派手な肩書きや大きな言葉より、目の前のひとつを動くところまで持っていく。その実直さで、関わる人の次の一歩をつくっていきます。</p>
+      <p class="sign" data-rise><span class="role">Message from the CEO</span><span class="nm">orbe合同会社　代表　大原 真生</span></p>
     </div>
   </section>
 
@@ -223,6 +237,13 @@
   </section>
 
   <section class="company" id="company">
+    <svg class="deco" style="bottom:-60px;left:-50px;width:320px;opacity:.42" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+      <rect x="40" y="110" width="92" height="92" rx="4" stroke="#2b3a67" stroke-width="2" transform="rotate(-12 86 156)"/>
+      <circle cx="212" cy="180" r="52" stroke="#f19072" stroke-width="2"/>
+      <line x1="10" y1="60" x2="185" y2="245" stroke="#f0b429" stroke-width="2"/>
+      <circle cx="120" cy="78" r="7" fill="#f19072"/>
+      <circle cx="245" cy="95" r="5" fill="#2b3a67"/>
+    </svg>
     <div class="wrap">
       <p class="label" data-rise>Company</p>
       <h2 class="sec-title" data-rise>会社概要</h2>
