@@ -94,14 +94,18 @@
   .about .strong{color:var(--shinonome-deep);font-weight:500;}
 
   /* services */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:46px;}
-  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;}
+  @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr;}}
   .card{
     background:var(--card);border:1px solid var(--line);border-radius:20px;
     padding:34px 32px;transition:transform .3s,box-shadow .3s,border-color .3s;
   }
   .card:hover{transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(217,111,76,.45);border-color:#f3d3c4;}
-  .card .num{font-family:var(--serif);font-size:15px;color:var(--shinonome);letter-spacing:.1em;}
+  .card .ico{display:block;width:54px;height:54px;margin-bottom:18px;}
+  .card:hover .ico{animation:wob .6s ease;}
+  @keyframes wob{30%{transform:rotate(-6deg);}70%{transform:rotate(4deg);}}
+  .card .num{font-family:var(--serif);font-size:14px;color:var(--shinonome);letter-spacing:.12em;}
   .card h3{font-family:var(--mincho);font-weight:600;font-size:19px;margin:14px 0 10px;line-height:1.5;}
   .card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.85;}
 
@@ -134,7 +138,7 @@
 
 <nav id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="/" aria-label="orbe合同会社">
+    <a class="brand" href="#top" aria-label="orbe合同会社">
       <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
         <circle cx="68" cy="34" r="7" fill="#f19072"/>
         <ellipse cx="50" cy="50" rx="38" ry="20" fill="none" stroke="#d96f4c" stroke-width="3" transform="rotate(-28 50 50)"/>
@@ -149,7 +153,7 @@
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <svg class="orbit" viewBox="0 0 600 600" aria-hidden="true">
     <g fill="none" stroke="#f19072" stroke-opacity=".5">
       <ellipse cx="300" cy="300" rx="250" ry="120" stroke-width="1.5" transform="rotate(-24 300 300)"/>
@@ -162,7 +166,7 @@
   <div class="wrap">
     <p class="eyebrow" data-rise>orbe LLC — Engineering the orbit</p>
     <h1 data-rise>ソフトウェア開発と生成AIで、<br><span class="accent">プロダクトと事業の軌道</span>をつくる。</h1>
-    <p class="lead" data-rise>orbe合同会社は、受託開発を軸に、生成AIを活用したシステム構築と事業づくりのコンサルティングを行うソフトウェア企業です。夜明けの空＝東雲のように、立ち上がる一歩に伴走します。</p>
+    <p class="lead" data-rise>orbe合同会社は、受託開発を軸に、生成AIを活用したシステム構築と事業づくりのコンサルティングを行うソフトウェア企業です。</p>
     <a class="cta" href="#company" data-rise>会社情報を見る
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
@@ -185,22 +189,32 @@
       <h2 class="sec-title" data-rise>事業内容</h2>
       <div class="grid">
         <div class="card" data-rise>
+          <svg class="ico" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="13" stroke="#f19072" stroke-width="2.5"/>
+            <line x1="11" y1="45" x2="47" y2="14" stroke="#2b3a67" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="42" cy="40" r="5" fill="#f0b429"/>
+          </svg>
           <span class="num">01</span>
           <h3>ソフトウェア受託開発</h3>
           <p>ソフトウェア・ハードウェアの企画、研究、開発、設計から受託開発まで。要件の解像度が低い段階からの伴走を得意とします。</p>
         </div>
         <div class="card" data-rise>
+          <svg class="ico" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+            <path d="M28 8 L48 44 L8 44 Z" stroke="#2b3a67" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M15 31 A16 16 0 0 1 41 31" stroke="#f19072" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="28" cy="35" r="4.5" fill="#f19072"/>
+          </svg>
           <span class="num">02</span>
-          <h3>生成AIシステム開発</h3>
-          <p>生成AIを活用したシステム開発と、クラウドシステムを用いた受託開発。実装だけでなく運用に乗せるところまで設計します。</p>
+          <h3>生成AI活用支援</h3>
+          <p>生成AIを業務やプロダクトに組み込む支援。技術選定から実装、運用に乗せるところまでを一気通貫で設計します。</p>
         </div>
         <div class="card" data-rise>
+          <svg class="ico" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+            <rect x="9" y="9" width="25" height="25" rx="3" stroke="#2b3a67" stroke-width="2.5"/>
+            <circle cx="40" cy="40" r="11" fill="#f19072"/>
+            <line x1="41" y1="8" x2="41" y2="29" stroke="#f0b429" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
           <span class="num">03</span>
-          <h3>情報提供サービス</h3>
-          <p>インターネット等の通信ネットワークと電子技術を用いた、各種情報提供・情報収集サービスの企画と運営。</p>
-        </div>
-        <div class="card" data-rise>
-          <span class="num">04</span>
           <h3>コンサルティング</h3>
           <p>企業の経営、事業開発、情報システムに関するコンサルティング。技術と事業の両面から意思決定を支えます。</p>
         </div>
@@ -216,7 +230,7 @@
         <tbody>
           <tr><th>商号</th><td>orbe合同会社（orbe LLC）</td></tr>
           <tr><th>所在地</th><td>東京都渋谷区道玄坂1丁目10番8号 渋谷道玄坂東急ビル2F-C</td></tr>
-          <tr><th>代表者</th><td>代表社員 大原 真生</td></tr>
+          <tr><th>代表者</th><td>代表 大原 真生</td></tr>
           <tr><th>設立</th><td>2026年5月</td></tr>
           <tr><th>事業内容</th><td>ソフトウェア受託開発、生成AIを活用したシステム開発、情報提供サービス、経営・事業開発に関するコンサルティング、シェアオフィス・レンタルスペースの運営</td></tr>
         </tbody>
