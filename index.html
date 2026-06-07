@@ -3,120 +3,222 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>orbe合同会社</title>
-<meta name="description" content="orbe合同会社のコーポレートサイト。ソフトウェア開発と生成AIの活用による受託開発、情報提供サービス、コンサルティングを行っています。">
-<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;circle cx='50' cy='50' r='8' fill='%231a1a2e'/&gt;&lt;circle cx='50' cy='50' r='34' fill='none' stroke='%231a1a2e' stroke-width='3'/&gt;&lt;/svg&gt;">
+<title>orbe合同会社｜ソフトウェア開発と生成AI</title>
+<meta name="description" content="orbe合同会社は、受託開発を軸に、生成AIを活用したシステム構築と事業づくりのコンサルティングを行うソフトウェア企業です。">
+<meta property="og:title" content="orbe合同会社">
+<meta property="og:description" content="ソフトウェア開発と生成AIで、プロダクトと事業の軌道をつくる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://orbe.co.jp/">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;circle cx='68' cy='34' r='7' fill='%23f19072'/&gt;&lt;ellipse cx='50' cy='50' rx='38' ry='20' fill='none' stroke='%23d96f4c' stroke-width='3' transform='rotate(-28 50 50)'/&gt;&lt;/svg&gt;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1a1a2e;
-    --muted:#5b5b6b;
-    --line:#e6e6ec;
-    --bg:#ffffff;
-    --accent:#2b3a67;
+    --shinonome:#f19072;          /* 東雲色 */
+    --shinonome-deep:#d96f4c;     /* 濃いめ東雲 */
+    --tint:#fdf6f1;               /* 薄い東雲ベース */
+    --tint-2:#fbeee6;
+    --ink:#2a211c;
+    --muted:#7a6a60;
+    --line:#efe2da;
+    --card:#ffffff;
+    --sans:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+    --mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+    --serif:"Marcellus",Georgia,serif;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
-    line-height:1.85;
+    margin:0;color:var(--ink);background:var(--tint);
+    font-family:var(--sans);line-height:1.9;letter-spacing:.01em;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+  a{color:inherit;}
 
-  /* header */
-  header{border-bottom:1px solid var(--line);}
-  .head-inner{display:flex;align-items:center;gap:12px;height:72px;}
-  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
-  .logo svg{display:block;}
-  .logo b{font-size:22px;letter-spacing:.14em;font-weight:600;}
+  /* ── nav ── */
+  nav{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    display:flex;align-items:center;height:68px;
+    background:rgba(253,246,241,0);transition:background .4s,box-shadow .4s,backdrop-filter .4s;
+  }
+  nav.scrolled{
+    background:rgba(253,246,241,.82);backdrop-filter:saturate(180%) blur(14px);
+    box-shadow:0 1px 0 var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:700;font-size:21px;letter-spacing:.16em;}
+  .brand svg{display:block;}
+  .nav-links{display:flex;gap:34px;}
+  .nav-links a{text-decoration:none;font-size:13px;letter-spacing:.14em;color:var(--muted);transition:color .25s;font-family:var(--serif);text-transform:uppercase;}
+  .nav-links a:hover{color:var(--shinonome-deep);}
+  @media(max-width:680px){.nav-links{display:none;}}
 
-  /* hero */
-  .hero{padding:96px 0 72px;}
-  .hero .en{color:var(--muted);font-size:13px;letter-spacing:.28em;text-transform:uppercase;margin:0 0 20px;}
+  /* ── hero ── */
+  .hero{position:relative;overflow:hidden;padding:170px 0 130px;}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(120% 90% at 78% 8%, rgba(241,144,114,.55) 0%, rgba(247,201,179,.32) 32%, rgba(253,246,241,0) 64%),
+      linear-gradient(180deg,#fef9f5 0%, var(--tint) 70%);
+  }
+  .orbit{position:absolute;top:-120px;right:-140px;z-index:0;width:680px;height:680px;opacity:.5;pointer-events:none;}
+  .hero .wrap{position:relative;z-index:1;}
+  .eyebrow{font-family:var(--serif);text-transform:uppercase;letter-spacing:.34em;font-size:13px;color:var(--shinonome-deep);margin:0 0 26px;}
   .hero h1{
-    font-family:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif;
-    font-weight:600;
-    font-size:clamp(28px,5vw,42px);
-    line-height:1.5;
-    letter-spacing:.02em;
-    margin:0 0 24px;
+    font-family:var(--mincho);font-weight:600;
+    font-size:clamp(32px,6vw,58px);line-height:1.42;letter-spacing:.02em;
+    margin:0 0 30px;max-width:18ch;
   }
-  .hero p{color:var(--muted);font-size:16px;max-width:600px;margin:0;}
+  .hero h1 .accent{color:var(--shinonome-deep);}
+  .hero .lead{font-size:clamp(15px,2.2vw,18px);color:var(--muted);max-width:54ch;margin:0 0 40px;}
+  .cta{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    padding:14px 30px;border-radius:999px;font-size:15px;font-weight:500;
+    color:#fff;background:linear-gradient(120deg,var(--shinonome) 0%,var(--shinonome-deep) 100%);
+    box-shadow:0 12px 30px -10px rgba(217,111,76,.6);transition:transform .25s,box-shadow .25s;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(217,111,76,.7);}
+  .cta svg{transition:transform .25s;}
+  .cta:hover svg{transform:translateX(4px);}
 
-  section{padding:56px 0;border-top:1px solid var(--line);}
-  h2{
-    font-size:13px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent);font-weight:600;margin:0 0 28px;
-  }
+  /* ── sections ── */
+  section{padding:108px 0;}
+  .label{font-family:var(--serif);text-transform:uppercase;letter-spacing:.3em;font-size:12px;color:var(--shinonome-deep);margin:0 0 18px;}
+  .sec-title{font-family:var(--mincho);font-weight:600;font-size:clamp(24px,3.6vw,34px);line-height:1.5;margin:0 0 18px;letter-spacing:.02em;}
+
+  /* about */
+  .about{background:linear-gradient(180deg,var(--tint) 0%, #fff 100%);}
+  .about p{font-size:clamp(15px,2vw,17px);color:#473b33;max-width:62ch;margin:0 0 18px;}
+  .about .strong{color:var(--shinonome-deep);font-weight:500;}
 
   /* services */
-  .svc{list-style:none;padding:0;margin:0;display:grid;gap:18px;}
-  .svc li{padding-left:22px;position:relative;color:#2a2a3a;}
-  .svc li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:7px;border-radius:50%;background:var(--accent);}
-
-  /* company table */
-  table{width:100%;border-collapse:collapse;}
-  th,td{text-align:left;vertical-align:top;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px;}
-  th{width:160px;color:var(--muted);font-weight:600;white-space:nowrap;}
-  td{color:#23232f;}
-
-  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;letter-spacing:.04em;}
-
-  @media(max-width:560px){
-    .hero{padding:64px 0 48px;}
-    th{width:108px;}
-    th,td{padding:14px 0;font-size:14px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:46px;}
+  @media(max-width:760px){.grid{grid-template-columns:1fr;}}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:34px 32px;transition:transform .3s,box-shadow .3s,border-color .3s;
   }
+  .card:hover{transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(217,111,76,.45);border-color:#f3d3c4;}
+  .card .num{font-family:var(--serif);font-size:15px;color:var(--shinonome);letter-spacing:.1em;}
+  .card h3{font-family:var(--mincho);font-weight:600;font-size:19px;margin:14px 0 10px;line-height:1.5;}
+  .card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.85;}
+
+  /* company */
+  .company{background:linear-gradient(180deg,#fff 0%,var(--tint-2) 100%);}
+  table{width:100%;border-collapse:collapse;margin-top:40px;}
+  th,td{text-align:left;vertical-align:top;padding:20px 0;border-bottom:1px solid var(--line);}
+  th{width:170px;color:var(--muted);font-weight:500;font-size:14px;letter-spacing:.06em;white-space:nowrap;}
+  td{color:var(--ink);font-size:15.5px;}
+  @media(max-width:560px){
+    th,td{display:block;width:100%;}
+    th{padding-bottom:4px;border-bottom:none;}
+    td{padding-top:4px;}
+  }
+
+  /* footer */
+  footer{background:var(--ink);color:#e9ddd5;padding:72px 0 40px;}
+  .foot-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .foot-brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:22px;letter-spacing:.16em;}
+  .foot-tag{font-family:var(--serif);letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#b79e90;}
+  .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#a89283;letter-spacing:.04em;}
+
+  /* rise-in animation */
+  [data-rise]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
+  [data-rise].in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){[data-rise]{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap head-inner">
-    <a class="logo" href="/" aria-label="orbe合同会社">
+
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/" aria-label="orbe合同会社">
       <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="8" fill="#1a1a2e"/>
-        <circle cx="50" cy="50" r="34" fill="none" stroke="#1a1a2e" stroke-width="3"/>
+        <circle cx="68" cy="34" r="7" fill="#f19072"/>
+        <ellipse cx="50" cy="50" rx="38" ry="20" fill="none" stroke="#d96f4c" stroke-width="3" transform="rotate(-28 50 50)"/>
       </svg>
-      <b>orbe</b>
+      orbe
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#company">Company</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="orbit" viewBox="0 0 600 600" aria-hidden="true">
+    <g fill="none" stroke="#f19072" stroke-opacity=".5">
+      <ellipse cx="300" cy="300" rx="250" ry="120" stroke-width="1.5" transform="rotate(-24 300 300)"/>
+      <ellipse cx="300" cy="300" rx="190" ry="190" stroke-width="1.2" stroke-opacity=".3"/>
+      <ellipse cx="300" cy="300" rx="130" ry="240" stroke-width="1.2" stroke-opacity=".25" transform="rotate(18 300 300)"/>
+    </g>
+    <circle cx="520" cy="228" r="9" fill="#f19072"/>
+    <circle cx="300" cy="110" r="5" fill="#d96f4c"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow" data-rise>orbe LLC — Engineering the orbit</p>
+    <h1 data-rise>ソフトウェア開発と生成AIで、<br><span class="accent">プロダクトと事業の軌道</span>をつくる。</h1>
+    <p class="lead" data-rise>orbe合同会社は、受託開発を軸に、生成AIを活用したシステム構築と事業づくりのコンサルティングを行うソフトウェア企業です。夜明けの空＝東雲のように、立ち上がる一歩に伴走します。</p>
+    <a class="cta" href="#company" data-rise>会社情報を見る
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
 </header>
 
 <main>
-  <div class="wrap">
-    <div class="hero">
-      <p class="en">orbe LLC</p>
-      <h1>ソフトウェア開発と生成AIで、<br>プロダクトと事業の軌道をつくる。</h1>
-      <p>orbe合同会社は、受託開発を軸に、生成AIを活用したシステム構築と事業づくりのコンサルティングを行っています。</p>
-    </div>
-  </div>
-
-  <section>
+  <section class="about" id="about">
     <div class="wrap">
-      <h2>Services</h2>
-      <ul class="svc">
-        <li>ソフトウェア・ハードウェアの企画、研究、開発、設計、受託開発</li>
-        <li>生成AIを活用したシステム開発、クラウドシステムを用いた受託開発</li>
-        <li>インターネット等の通信ネットワークを利用した情報提供サービス</li>
-        <li>企業の経営、事業開発、情報システムに関するコンサルティング</li>
-        <li>シェアオフィス・レンタルスペースの管理および運営</li>
-      </ul>
+      <p class="label" data-rise>About</p>
+      <h2 class="sec-title" data-rise>名は、軌道。</h2>
+      <p data-rise><span class="strong">orbe</span> は「軌道（orbit）」に由来します。プロダクトも事業も、立ち上げた瞬間に正解の形をしているわけではありません。小さく試し、計測し、仮説を更新しながら、進むべき軌道を少しずつ描いていく。その反復に技術で寄り添うのが私たちの役割です。</p>
+      <p data-rise>受託開発に閉じず、生成AIの実装から運用設計、事業づくりのコンサルティングまでを一気通貫で扱います。作るべきものの輪郭が曖昧な段階から関わり、検証を重ねて、確かなアウトプットへ収束させます。</p>
     </div>
   </section>
 
-  <section>
+  <section id="services">
     <div class="wrap">
-      <h2>Company</h2>
-      <table>
+      <p class="label" data-rise>Services</p>
+      <h2 class="sec-title" data-rise>事業内容</h2>
+      <div class="grid">
+        <div class="card" data-rise>
+          <span class="num">01</span>
+          <h3>ソフトウェア受託開発</h3>
+          <p>ソフトウェア・ハードウェアの企画、研究、開発、設計から受託開発まで。要件の解像度が低い段階からの伴走を得意とします。</p>
+        </div>
+        <div class="card" data-rise>
+          <span class="num">02</span>
+          <h3>生成AIシステム開発</h3>
+          <p>生成AIを活用したシステム開発と、クラウドシステムを用いた受託開発。実装だけでなく運用に乗せるところまで設計します。</p>
+        </div>
+        <div class="card" data-rise>
+          <span class="num">03</span>
+          <h3>情報提供サービス</h3>
+          <p>インターネット等の通信ネットワークと電子技術を用いた、各種情報提供・情報収集サービスの企画と運営。</p>
+        </div>
+        <div class="card" data-rise>
+          <span class="num">04</span>
+          <h3>コンサルティング</h3>
+          <p>企業の経営、事業開発、情報システムに関するコンサルティング。技術と事業の両面から意思決定を支えます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="company" id="company">
+    <div class="wrap">
+      <p class="label" data-rise>Company</p>
+      <h2 class="sec-title" data-rise>会社概要</h2>
+      <table data-rise>
         <tbody>
           <tr><th>商号</th><td>orbe合同会社（orbe LLC）</td></tr>
-          <tr><th>所在地</th><td>東京都渋谷区幡ヶ谷1丁目2番5-603号 HATAGAYA125</td></tr>
+          <tr><th>所在地</th><td>東京都渋谷区道玄坂1丁目10番8号 渋谷道玄坂東急ビル2F-C</td></tr>
           <tr><th>代表者</th><td>代表社員 大原 真生</td></tr>
           <tr><th>設立</th><td>2026年5月</td></tr>
-          <tr><th>事業内容</th><td>ソフトウェア受託開発、生成AIを活用したシステム開発、情報提供サービス、経営・事業開発コンサルティング</td></tr>
+          <tr><th>事業内容</th><td>ソフトウェア受託開発、生成AIを活用したシステム開発、情報提供サービス、経営・事業開発に関するコンサルティング、シェアオフィス・レンタルスペースの運営</td></tr>
         </tbody>
       </table>
     </div>
@@ -124,7 +226,33 @@
 </main>
 
 <footer>
-  <div class="wrap">© 2026 orbe合同会社</div>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="68" cy="34" r="7" fill="#f19072"/>
+          <ellipse cx="50" cy="50" rx="38" ry="20" fill="none" stroke="#f19072" stroke-width="3" transform="rotate(-28 50 50)"/>
+        </svg>
+        orbe
+      </div>
+      <p class="foot-tag">Engineering the orbit</p>
+    </div>
+    <div class="foot-bottom">© 2026 orbe合同会社</div>
+  </div>
 </footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>20);
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.14});
+  document.querySelectorAll('[data-rise]').forEach((el,i)=>{
+    el.style.transitionDelay=(Math.min(i,6)*60)+'ms';
+    io.observe(el);
+  });
+</script>
 </body>
 </html>
